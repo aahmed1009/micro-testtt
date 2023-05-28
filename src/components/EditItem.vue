@@ -1,99 +1,77 @@
 <template>
-  <div class="edit">
-    <div>
-      <form v-on:submit.prevent="editForm">
-        <div class="mb-4">
-          <label class="block text-gray-900 font-medium mb-1" for="HMP_ID">
-            HMP_ID
-          </label>
-          <input
-            type="text"
-            class="form-control"
-            id="HMP_ID"
-            placeholder="HMP_ID"
-            v-model="form.HMP_ID"
-          />
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-900 font-medium mb-1" for="GOLD_ID">
-            GOLD_ID
-          </label>
-          <input
-            type="text"
-            class="form-control"
-            id="GOLD_ID"
-            placeholder="GOLD_ID"
-            v-model="form.GOLD_ID"
-          />
-        </div>
-        <div class="mb-4">
-          <label
-            class="block text-gray-900 font-medium mb-1"
-            for="Organism_Name"
-          >
-            Organism_Name
-          </label>
-          <input
-            type="text"
-            class="form-control"
-            id="Organism_Name"
-            placeholder="Organism_Name"
-            v-model="form.Organism_Name"
-          />
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-900 font-medium mb-1" for="Domain">
-            Domain
-          </label>
-          <input
-            type="text"
-            class="form-control"
-            id="Domain"
-            placeholder="Domain"
-            v-model="form.Domain"
-          />
-        </div>
-        <div class="mb-4">
-          <label
-            class="block text-gray-900 font-medium mb-1"
-            for="NCBI_Superkingdom"
-          >
-            NCBI_Superkingdom
-          </label>
-          <input
-            type="text"
-            class="form-control"
-            id="NCBI_Superkingdom"
-            placeholder="NCBI_Superkingdom"
-            v-model="form.NCBI_Superkingdom"
-          />
-        </div>
-        <div class="mb-4">
-          <label
-            class="block text-gray-900 font-medium mb-1"
-            for="HMP_Isolation_Body_Site"
-          >
-            HMP_Isolation_Body_Site
-          </label>
-          <input
-            type="text"
-            class="form-control"
-            id="HMP_Isolation_Body_Site"
-            placeholder="HMP_Isolation_Body_Site"
-            v-model="form.HMP_Isolation_Body_Site"
-          />
-        </div>
-        <div class="mb-4">
-          <button
-            class="bg-teal-500 text-white font-bold py-2 px-4 rounded-md hover:bg-teal-700"
-          >
-            Edit
-          </button>
-        </div>
-      </form>
+  <div class="edit flex flex-col max-w-md mx-auto">
+    <div class="my-4">
+      <h2 class="text-lg text-gray-900 font-semibold">Add Record</h2>
     </div>
+    <form v-on:submit.prevent="editForm">
+      <div class="mb-4">
+        <label class="block text-gray-900 font-medium mb-1" for="_id">
+          _id
+        </label>
+        <input type="text"
+          class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-500"
+          id="_id" placeholder="_id" v-model="form._id" />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-900 font-medium mb-1" for="HMP_ID">
+          HMP_ID
+        </label>
+        <input type="text"
+          class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-500"
+          id="HMP_ID" placeholder="HMP_ID" v-model="form.HMP_ID" />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-900 font-medium mb-1" for="GOLD_ID">
+          GOLD_ID
+        </label>
+        <input type="text"
+          class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-500"
+          id="GOLD_ID" placeholder="GOLD_ID" v-model="form.GOLD_ID" />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-900 font-medium mb-1" for="Organism_Name">
+          Organism_Name
+        </label>
+        <input type="text"
+          class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-500"
+          id="Organism_Name" placeholder="Organism_Name" v-model="form.Organism_Name" />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-900 font-medium mb-1" for="Domain">
+          Domain
+        </label>
+        <input type="text"
+          class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-500"
+          id="Domain" placeholder="Domain" v-model="form.Domain" />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-900 font-medium mb-1" for="NCBI_Superkingdom">
+          NCBI_Superkingdom
+        </label>
+        <input type="text"
+          class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-500"
+          id="NCBI_Superkingdom" placeholder="NCBI_Superkingdom" v-model="form.NCBI_Superkingdom" />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-900 font-medium mb-1" for="HMP_Isolation_Body_Site">
+          HMP_Isolation_Body_Site
+        </label>
+        <input type="text"
+          class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-500"
+          id="HMP_Isolation_Body_Site" placeholder="HMP_Isolation_Body_Site" v-model="form.HMP_Isolation_Body_Site" />
+      </div>
+      <div class="mb-4">
+        <button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-8 ml-32   rounded-md">
+          Edit
+        </button>
+
+      </div>
+    </form>
   </div>
 </template>
+
+
+
 
 <script>
 import axios from "axios";

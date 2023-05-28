@@ -7,6 +7,9 @@ import EditItem from "../components/EditItem.vue";
 import ShowRecords from "../components/ShowRecords.vue";
 import CreateMany from "../components/CreateMany.vue";
 import DeleteMany from "../components/DeleteMany.vue";
+import AppFeatures from "../components/AppFeatures.vue";
+import AppTeam from "../components/AppTeam.vue";
+import ContactUs from "../components/ContactUs.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -19,6 +22,21 @@ const routes = [
     path: "/ShowRecords",
     name: "ShowRecords",
     component: ShowRecords,
+  },
+  {
+    path: "/AppTeam",
+    name: "AppTeam",
+    component: AppTeam,
+  },
+  {
+    path: "/ContactUs",
+    name: "ContactUs",
+    component: ContactUs,
+  },
+  {
+    path: "/AppFeatures",
+    name: "AppFeatures",
+    component: AppFeatures,
   },
   {
     path: "/CreateMany",

@@ -5,16 +5,17 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-0">
           <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
             <div class="flex justify-start lg:w-0 lg:flex-1">
-              <router-link to="/Home">
+              <router-link to="/">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
                   stroke-linejoin="round" stroke-width="2" class="w-10 h-10 p-2 text-white bg-teal-500 rounded-full"
                   viewBox="0 0 24 24">
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                 </svg></router-link>
-              <button @click="RedirectHome()"
-                class="flex items-center mb-4 font-medium text-gray-800 title-font md:mb-0 cur">
-                <span class="ml-3 text-xl">Microbiome</span>
-              </button>
+              <router-link to="/">
+                <button class="flex items-center mb-4 font-medium text-gray-800 title-font md:mb-0 cur">
+                  <span class="ml-3 text-xl">Microbiome</span>
+                </button>
+              </router-link>
             </div>
             <div class="-mr-2 -my-2 md:hidden">
               <button type="button" aria-expanded="false"
@@ -36,30 +37,11 @@
               <button class="text-gray-800 text-sm font-semibold leading-5 hover:text-green-700">
                 <router-link :to="{
                   name: 'ShowRecords',
-                }">data</router-link>
+                }">Data</router-link>
               </button>
-              <button class="text-gray-800 text-sm font-semibold leading-5 hover:text-green-700">
-                <router-link :to="{
-                  name: 'AddItem',
-                }">addRow</router-link>
-              </button>
-              <button class="text-gray-800 text-sm font-semibold leading-5 hover:text-green-700">
-                <router-link :to="{
-                  name: 'SearchForm',
-                }">aggregation</router-link>
-              </button>
-              <button class="text-gray-800 text-sm font-semibold leading-5 hover:text-green-700">
-                <router-link :to="{
-                  name: 'CreateMany',
-                }">CreateMany</router-link>
-              </button>
-              <button class="text-gray-800 text-sm font-semibold leading-5 hover:text-green-700">
-                <router-link :to="{
-                  name: 'DeleteMany',
-                }">DeleteMany</router-link>
-              </button>
+
               <router-link :to="{
-                name: 'home',
+                name: 'AppTeam',
               }" class="text-gray-800 text-sm font-semibold leading-5 hover:text-green-700">
                 Team
               </router-link>
@@ -73,12 +55,10 @@
 <script>
 export default {
   methods: {
-    RedirectHome() {
-      this.$router.push("/Home");
-    },
-    RedirectTeam() {
-      this.$router.push("/AppTeam").catch(() => { });
-    },
+    // RedirectHome() {
+    //   this.$router.push("/");
+    // },
+
   },
 };
 </script>

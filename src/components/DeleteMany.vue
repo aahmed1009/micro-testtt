@@ -3,10 +3,13 @@
     <div class="w-full max-w-md mx-auto">
       <form>
         <div class="mb-4">
-          <div>Selected: {{ selected }}</div>
+          <div class="text-lg text-gray-700 px-4 py-2 rounded-md ">
+            Select: {{ selected }}
+          </div>
 
-          <select v-model="selected">
-            <option disabled value="">Please select one</option>
+          <select v-model="selected"
+            class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-500">
+            <option disabled value="">Please select Key</option>
             <option>_id</option>
             <option>HMP_ID</option>
             <option>GOLD_ID</option>
@@ -17,33 +20,22 @@
           </select>
         </div>
         <div class="mb-4">
-          <label
-            class="block text-gray-900 font-medium mb-1"
-            for="
-                                                                                                                                      HMP_ID"
-          >
+          <label class="block text-gray-900 font-medium mb-1" :for="selected">
             value
           </label>
-          <input
-            type="text"
-            class="form-control"
-            id="
-                                                                                                                                      HMP_ID"
-            placeholder="HMP_ID"
-            v-model="value"
-          />
+          <input type="text"
+            class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-500"
+            :id="selected" :placeholder="selected" v-model="value" />
         </div>
 
-        <button
-          @click.prevent="deleteAll"
-          class="bg-blue-500 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700"
-        >
-          deleteAll
+        <button @click.prevent="deleteAll" class="bg-red-500 text-white font-bold py-2 px-4 rounded-md hover:bg-red-700">
+          Delete All
         </button>
       </form>
     </div>
   </div>
 </template>
+
 <script>
 import axios from "axios";
 
